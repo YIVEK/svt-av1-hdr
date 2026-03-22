@@ -8471,13 +8471,7 @@ void svt_aom_sig_deriv_mode_decision_config(SequenceControlSet *scs, PictureCont
             // use dlf_mode as if were being set for 3 presets lower
             dlf_enc_mode = AOMMAX(ENC_MR, enc_mode - 3);
         }
-        dlf_level = get_dlf_level(pcs,
-                                  dlf_enc_mode,
-                                  is_not_last_layer,
-                                  fast_decode,
-                                  input_resolution,
-                                  allintra,
-                                  (pcs->temporal_layer_index == 0));
+        dlf_level = 2;
     }
     svt_aom_set_dlf_controls(pcs->ppcs, dlf_level);
 }
